@@ -2,8 +2,9 @@ package com.dev.ATSapp.Dto;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.dev.ATSapp.Enums.Role;
-import com.dev.ATSapp.Enums.Status;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,23 +13,18 @@ import lombok.Setter;
 @Setter
 public class UserRequest {
 
-	private Integer userId;
-	
-	private String fullname;
-
+	private String firstname;
+	private String lastname;
 	private String email;
-
 	private String password;
-
-	private LocalDate dob;
-
 	private Long mobile;
-	
+	private LocalDate dob;
 	private Integer age;
-
+	private String city;
+	private String country;
+	private Long pincode;
 	private Role role;
-
-	private Integer roleId;
-
-	private Status status;
+	private Integer roleTypeId;
+	private LocalDate createdDate;
+	private LocalDate updatedDate;
 }

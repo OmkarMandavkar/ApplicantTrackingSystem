@@ -6,11 +6,13 @@ import java.util.List;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,44 +26,56 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Company {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer companyId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer companyId;
 
-    @Column(nullable = false)
-    private String cname;
+	@Column(nullable = false)
+	private String cname;
 
-    private String description;
+	@Lob
+	@Column(columnDefinition = "MEDIUMTEXT")
+	private String description;
 
-    private String address;
+	private String address;
 
-    private String natureOfBusiness;
+	private String natureOfBusiness;
 
-    private String employeeCount;
+	private String employeeCount;
 
-    private String websiteLink;
+	private String websiteLink;
 
-    private String companyAuthCode;
-    
-    private String companyAdminName;
+	private String imageLink;
+	
+	@Column(unique = true)
+	private String companyAuthCode;
 
-    private String companyAdminPassword;
-    
-    @Column(unique = true)
-    private String companyAdminEmail;
+	private String companyAdminFirstName;
 
-    private Long companyAdminMobile;    
+	private String companyAdminLastName;
 
-    
-    @OneToMany(mappedBy = "company")
-    private List<JobProfile> jobProfiles;
+	@Column(unique = true)
+	private String companyAdminEmail;
 
-    @OneToMany(mappedBy = "company")
-    private List<InterviewResult> interviewResults;
+	private String companyAdminPassword;
+	
+	private Long companyAdminMobile;
 
-    @CreationTimestamp
-    private LocalDate createdDate;
+	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+	private List<User> users;
 
-    @UpdateTimestamp
-    private LocalDate updatedDate;
+	@OneToMany(mappedBy = "company")
+	private List<JobDescription> jobDescriptions;
+
+	@OneToMany(mappedBy = "company")
+	private List<JobMaster> jobMasters;
+
+	@OneToMany(mappedBy = "company")
+	private List<Recruiter> recruiters;
+	
+	@CreationTimestamp
+	private LocalDate createdDate;
+
+	@UpdateTimestamp
+	private LocalDate updatedDate;
 }

@@ -8,9 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,39 +27,44 @@ public class Candidate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer candidateId;
 
-    @OneToOne
-    @JoinColumn(name = "userId", nullable = false)
+    private String firstname;
+    
+    private String lastname;
+    
+    @ManyToOne
+    @JoinColumn(name = "userId")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "companyId", nullable = false)
+    @JoinColumn(name = "companyId")
     private Company company;
 
     @ManyToOne
-    @JoinColumn(name = "jobId", nullable = false)
-    private JobProfile jobProfile;
+    @JoinColumn(name = "jobId")
+    private JobDescription jobDescription;
 
     @OneToMany(mappedBy = "candidate")
-    private List<InterviewResult> interviewResults;
+    private List<JobMaster> jobMasters;
 
-    @Column(nullable = false)
-    private String fullname;
-
-    @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
     private Long phone;
 
-    private String position;
+    private String currentDesignation;
 
-    private String experience;
+    private Long salaryExpectations;
 
+	@Lob
+	@Column(columnDefinition = "MEDIUMTEXT")
+    private String workExperience;
+
+	@Lob
+	@Column(columnDefinition = "MEDIUMTEXT")
     private String qualification;
 
-    private String jobLocation;
+    private String location;
 
-    private Integer noticePeriod;
-
+	@Lob
+	@Column(columnDefinition = "MEDIUMTEXT")
     private String skills;
 }
