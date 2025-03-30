@@ -1,4 +1,4 @@
-# 🚀 HIRE4x Applicant Tracking System
+# 🚀 HIRE4x : Applicant Tracking System
 
 ## 🌟 Overview
 The **Applicant Tracking System (ATS)** is a web-based application built using **Spring MVC, JSP, and Spring Data JPA** to streamline the recruitment process. It enables companies to manage job postings, recruiters, candidates, and interview processes efficiently. The system provides different functionalities based on user roles: **Company Admin, Candidate, Recruiter, and Super Admin**.
