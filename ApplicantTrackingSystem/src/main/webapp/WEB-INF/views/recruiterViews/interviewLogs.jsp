@@ -1,0 +1,163 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.List"%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Logs</title>
+    <link href="/css/sidebar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+     	.fas{
+			margin-right: 5px;
+		}
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            left: auto;
+            right: 0;
+            min-width: 150px;
+            z-index: 1000;
+        }
+        .dropdown-toggle::after {
+            margin-left: 0.5em;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body style="background-color: #edebe9">
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="d-flex justify-content-center">
+                <img src="${recruiterImage}" alt="Recruiter Logo" class="rounded-circle" style="width: 50px; height: 50px"/>
+                <h4><strong>${recruiterName}</strong></h4>
+            </div>
+            <hr class="border-light" />
+            <nav class="nav flex-column">
+				<a href="<%=request.getContextPath()%>/recruiter/viewEditDetails" class="nav-link"> <i class="fas fa-user-edit"></i> View/Edit Profile </a>
+				<a href="<%=request.getContextPath()%>/recruiter/scheduleInterview" class="nav-link"> <i class="fas fa-calendar-check"></i> Manage Interview </a>
+				<a href="<%=request.getContextPath()%>/recruiter/interviewLogs" class="nav-link"> <i class="fas fa-file-alt"></i> Interview Logs </a>	
+				<a href="<%=request.getContextPath()%>/recruiter/onboarding" class="nav-link"> <i class="fas fa-user-plus"></i> Onboarding </a>
+            </nav>
+            <button class="btn btn-danger logout-btn" data-toggle="modal" data-target="#confirmLogoutModal">
+                Logout
+            </button>
+        </div>
+
+        <div class="main-content">
+            <c:if test="${empty logData}">
+                <p class="text-center">No Job data available</p>
+            </c:if>
+            <div class="row col-md-12 mt-2" id="jobContainer" style="margin: 0 auto;">
+                <table class="table table-bordered table-hover" id="jobTable">
+                    <thead class="thead text-center">
+                        <tr>
+                        	<th class="d-none">Round Id</th>
+                        	<th class="d-none">Application Id</th>
+                            <th>Job Title</th>
+                            <th style="width: 15%">Company</th>
+                            <th style="width: 18%">Candidate Name</th>
+                            <th style="width: 5%">Round</th>
+                            <th style="width: 16%">Schedule</th>
+                            <th style="width: 10%">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="job" items="${logData}">
+                            <tr>
+                            	<td class="d-none">${job.roundId}</td>
+                                <td class="d-none">${job.jobMaster.applicationId}</td>
+                                <td style="text-align: left !important;">${job.jobMaster.jobDescription.title}</td>
+                                <td style="text-align: left !important;">${job.jobMaster.company.companyName}</td>
+                                <td style="text-align: left !important;">${job.jobMaster.candidate.user.firstName} ${job.jobMaster.candidate.user.lastName}</td>
+                            	<td>${job.roundNumber}</td>
+                                <td>${job.roundDate}  -  ${job.roundTime}</td>
+                                <td>${job.roundStatus}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+			    <nav>
+			        <ul class="pagination justify-content-center" id="pagination"></ul>
+			    </nav>
+            </div>
+        </div>
+    </div>
+    <jsp:include page="/WEB-INF/views/utility/model.jsp" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var currentUrl = window.location.pathname;
+            $('.sidebar a').each(function () {
+                if (this.href.indexOf(currentUrl) !== -1) {
+                    $(this).addClass('active');
+                }
+            });
+        });
+
+        $('#confirmLogoutModal').on('show.bs.modal', function (event) {
+            var modal = $(this);
+            var logoutUrl = "<%=request.getContextPath()%>/auth/logout";
+            modal.find('#confirmLogoutBtn').attr("href", logoutUrl);
+        });
+        
+
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+        
+        //PAGINATION
+    	$(document).ready(function () {
+            var rowsPerPage = 9;
+            var rows = $('#jobTable tbody tr');
+            var totalRows = rows.length;
+            var totalPages = Math.ceil(totalRows / rowsPerPage);
+            var pagination = $('#pagination');
+
+            function showPage(pageNumber) {
+                var start = (pageNumber - 1) * rowsPerPage;
+                var end = start + rowsPerPage;
+
+                rows.hide().slice(start, end).show();
+
+                pagination.find('li').removeClass('active');
+                pagination.find('li:eq(' + (pageNumber - 1) + ')').addClass('active');
+            }
+
+            function createPagination() {
+                pagination.empty();
+
+                for (var i = 1; i <= totalPages; i++) {
+                    pagination.append('<li class="page-item"><a class="page-link" href="#">' + i + '</a></li>');
+                }
+
+                pagination.find('li:first').addClass('active');
+
+                pagination.find('a').click(function (e) {
+                    e.preventDefault();
+                    showPage($(this).text());
+                });
+            }
+
+            if (totalPages > 1) {
+                createPagination();
+                showPage(1);
+            }
+        });
+        
+	</script>
+</body>
+</html>
