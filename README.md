@@ -118,6 +118,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 For any queries or contributions, feel free to reach out:
 
-- **GitHub**: [OmkarMandavkar](https://github.com/OmkarMandavkar)  
-- **Email**: [your-email@example.com] 📩
+- **GitHub**: OmkarMandavkar (https://github.com/OmkarMandavkar)  
+- **Email**: omkarmandavkar000@gmail.com 📩
 
