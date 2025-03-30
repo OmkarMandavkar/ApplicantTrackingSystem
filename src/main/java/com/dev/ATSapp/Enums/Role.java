@@ -1,0 +1,12 @@
+package com.dev.ATSapp.Enums;
+
+public enum Role {
+	CEO, 
+	SUPER_ADMIN,	
+	HR_EXECUTIVE, 
+	HR_MANAGER,
+	HIRING_MANAGER,
+	COMPANY_ADMIN, 
+	RECRUITER, 
+	CANDIDATE
+}
