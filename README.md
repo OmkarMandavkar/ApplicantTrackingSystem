@@ -70,8 +70,8 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
 
 ## 🛠 Technologies Used
 
-- **Backend**: Spring MVC, Spring Boot, JDBC  
-- **Frontend**: JSP, HTML, CSS, JavaScript  
+- **Backend**: Spring MVC, Spring Data JPA
+- **Frontend**: JSP, CSS, JavaScript  
 - **Database**: MySQL  
 - **Email Notifications**: JavaMail API  
 - **Version Control**: Git, GitHub  
