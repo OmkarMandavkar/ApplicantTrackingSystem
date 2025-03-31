@@ -26,19 +26,30 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
 
 ---
 
-### 👩‍💼 3. Candidate Functionalities
+Here's your corrected version with proper indentation and formatting:  
+
+---
+
+### 👩‍💼 3. Candidate Functionalities  
 
 📌 **Dashboard**:  
    - 📊 Displays application statistics (applied/rejected/selected/in-progress).  
    - 📉 Graph representing application trends over the last six months.  
-   - 📅 Table showing upcoming interviews with schedule and round details.
-👤 **Profile Management**: View and edit personal details, add professional background (projects, education, work experience).  
+   - 📅 Table showing upcoming interviews with schedule and round details.  
+
+👤 **Profile Management**: View and edit personal details, Add professional background (projects, education, work experience).  
+
 📃 **Job Listings**: View all active jobs.  
+
 📌 **Application Tracking**: Monitor applied job statuses.  
+
 ⭐ **Saved Jobs**: View saved jobs with quick access to job details.  
+
 📜 **Job Logs**: Track application history.  
+
 📂 **Document Upload**: Upload necessary documents for job applications.  
-📢 **Job Alerts**: Receive notifications for relevant job openings.
+
+📢 **Job Alerts**: Receive notifications for relevant job openings.  
 
 ---
 
