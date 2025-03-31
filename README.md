@@ -119,6 +119,26 @@ Here's your corrected version with proper indentation and formatting:
 
 ---
 
+## Snapshots
+
+![COMPANY](ATS_Image/Company1_Dashboard.PNG)
+![COMPANY](ATS_Image/Company2_CreateJobDescription.PNG)
+![COMPANY](ATS_Image/Candidate4_ViewJobDetails.PNG)
+
+![CANDIDATE](ATS_Image/Candidate1_Dashboard.PNG)
+![CANDIDATE](ATS_Image/Candidate5_ViewCandidateDetails.PNG)
+![CANDIDATE](ATS_Image/Candidate2_ViewActiveJobs.PNG)
+![CANDIDATE](ATS_Image/Candidate3_ViewAppliedJobs.PNG)
+
+![RECRUITER](ATS_Image/Recruiter1_ScheduleInterview.PNG)
+![RECRUITER](ATS_Image/Recruiter2_ScheduleInterview.PNG)
+![RECRUITER](ATS_Image/Recruiter3_EvaluateInterview.PNG)
+![RECRUITER](ATS_Image/Recruiter5_Onboarding.PNG)
+![RECRUITER](ATS_Image/Recruiter6_SendJoiningLetter.PNG)
+![RECRUITER](ATS_Image/Recruiter7_SendOfferLetter.PNG)
+
+---
+
 ## 📜 License
 
 This project is licensed under the [MIT License](LICENSE).
