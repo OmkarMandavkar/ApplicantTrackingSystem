@@ -31,7 +31,7 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
 📌 **Dashboard**:  
    - 📊 Displays application statistics (applied/rejected/selected/in-progress).  
    - 📉 Graph representing application trends over the last six months.  
-   - 📅 Table showing upcoming interviews with schedule and round details.  
+   - 📅 Table showing upcoming interviews with schedule and round details.
 👤 **Profile Management**: View and edit personal details, add professional background (projects, education, work experience).  
 📃 **Job Listings**: View all active jobs.  
 📌 **Application Tracking**: Monitor applied job statuses.  
@@ -49,7 +49,7 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
    - 🔍 View candidate and job details.  
    - ✉️ Schedule interviews via email.  
    - ✅ Evaluate candidates and update interview status.  
-📋 **Interview Logs**: View history of conducted interviews.  
+📋 **Interview Logs**: View history of conducted interviews.
 📜 **Onboarding Process**:  
    - 📩 Request candidate documents via email.  
    - 📄 Send offer and joining letters.  
@@ -84,10 +84,11 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
    ```sh
    git clone https://github.com/OmkarMandavkar/ApplicantTrackingSystem.git
    ```
-2. **Import the project** into Spring Tool Suite (STS) or Eclipse.
+2. **Import the project** into Spring Tool Suite (STS).
 3. **Configure the database**:
    - 🛢 Create a MySQL database.  
    - ⚙️ Update database credentials in `application.properties`.
+   - 📩 Configure and update the Email configuration in `application.properties`.
 4. **Run the application**:
    ```sh
    mvn spring-boot:run
@@ -96,15 +97,6 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
    ```sh
    http://localhost:8080
    ```
-
----
-
-## 🤝 Contribution Guidelines
-
-🔹 Fork the repository.  
-🔹 Create a new branch.  
-🔹 Commit your changes with clear messages.  
-🔹 Submit a pull request.
 
 ---
 
