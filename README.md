@@ -18,10 +18,15 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
 ### 🏢 2. Company Admin Functionalities
 
 📊 **Dashboard**: Displays job statistics, active jobs, interview status, and application counts (selected/rejected/in-progress/hired).  
+
 📝 **Profile Management**: View and edit admin details.  
+
 🛠 **Job Management**: Create and manage job postings (ACTIVE/INACTIVE status).  
+
 👥 **Recruiter Management**: Register recruiters using email and mobile, generate temporary credentials, and send via email.  
+
 🎯 **Candidate Management**: Track job applications and monitor candidate progress.  
+
 📈 **Hiring Analytics**: View hiring trends and recruiter performance.
 
 ---
@@ -56,11 +61,14 @@ Here's your corrected version with proper indentation and formatting:
 ### 🤝 4. Recruiter Functionalities
 
 👤 **Profile Management**: View and edit recruiter details.  
+
 📅 **Interview Management**:  
    - 🔍 View candidate and job details.  
    - ✉️ Schedule interviews via email.  
    - ✅ Evaluate candidates and update interview status.  
+
 📋 **Interview Logs**: View history of conducted interviews.
+
 📜 **Onboarding Process**:  
    - 📩 Request candidate documents via email.  
    - 📄 Send offer and joining letters.  
