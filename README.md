@@ -8,7 +8,7 @@ The **Applicant Tracking System (ATS)** is a web-based application built using *
 
 ## 🛠 FlowChart
 
-![FLOWCHART](ATS_Image/flowchart.png)
+![FLOWCHART](ATS_Image/flowChartATS.png)
 
 ---
 ## 🎯 Features
