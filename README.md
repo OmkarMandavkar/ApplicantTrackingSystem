@@ -126,18 +126,20 @@ Here's your corrected version with proper indentation and formatting:
 
 ## Snapshots
 
-**Company**:
+##**Company**:
 ![COMPANY](ATS_Image/Company1_Dashboard.PNG)
 ![COMPANY](ATS_Image/Company2_CreateJobDescription.PNG)
 ![COMPANY](ATS_Image/Candidate4_ViewJobDetails.PNG)
 
-**Candidate**:
+
+##**Candidate**:
 ![CANDIDATE](ATS_Image/Candidate1_Dashboard.PNG)
 ![CANDIDATE](ATS_Image/Candidate5_ViewCandidateDetails.PNG)
 ![CANDIDATE](ATS_Image/Candidate2_ViewActiveJobs.PNG)
 ![CANDIDATE](ATS_Image/Candidate3_ViewAppliedJobs.PNG)
 
-**Recruiter**:
+
+##**Recruiter**:
 ![RECRUITER](ATS_Image/Recruiter1_ScheduleInterview.PNG)
 ![RECRUITER](ATS_Image/Recruiter2_ScheduleInterview.PNG)
 ![RECRUITER](ATS_Image/Recruiter3_EvaluateInterview.PNG)
@@ -145,7 +147,8 @@ Here's your corrected version with proper indentation and formatting:
 ![RECRUITER](ATS_Image/Recruiter6_SendJoiningLetter.PNG)
 ![RECRUITER](ATS_Image/Recruiter7_SendOfferLetter.PNG)
 
-**Email**
+
+##**Email**
 ![EMAIL](ATS_Image/Round1.png)
 ![EMAIL](ATS_Image/Round2.png)
 ![EMAIL](ATS_Image/OfferLetter.png)
